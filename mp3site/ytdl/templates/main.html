@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" onclick="loading_disp()">
+</form>
+
+<div id="loading" class="d-flex align-items-center">
+
+</div>
+
+
+
+<script type="text/javascript">
+   function loading_disp()
+   {
+     alert("Hello World")
+     var h1 = document.getElementById("loading")
+    html = '<strong>Loading...</strong>'
+    html +=  '<div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>'
+    h1.innerHTML = html;
+
+   }
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% with x as 0 %}
+{% endwith %}
+{% block content %}
+<div class="row">
+{% for url in urls %}
+
+<p> <!--{{url}} --></p>
+  <div class="col-12">
+
+    <a href= "{% url  'download' pk=forloop.counter0 %}" >{{ url|slice:"18:" }} </a>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
